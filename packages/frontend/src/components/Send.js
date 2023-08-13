@@ -7,9 +7,10 @@ function Send() {
 
   const handleSubmit = (e) => {
     // e.preventDefault();
-    const file = new FormData();
-    file.append('image', image[0]);
-    axios.post('http://localhost:3001/upload/', file, 
+    const data = new FormData();
+    data.append('image', image);
+    console.log(image);
+    axios.post('http://localhost:3001/upload/', data, 
     {
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -23,7 +24,7 @@ function Send() {
   return (
     <>
       <p>ファイル送信</p>
-      <input accept="image/*" multiple type="file" onChange={event => setImage(event.target.files)} />
+      <input accept="image/*" type="file" onChange={event => setImage(event.target.files[0])} />
       <button onClick={handleSubmit}>送信</button>
       {message ? (<p>{message}</p>) : null}
     </>
