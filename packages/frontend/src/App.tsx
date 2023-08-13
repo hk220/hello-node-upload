@@ -1,7 +1,6 @@
 import './App.css';
 import Send from './components/Send';
 
-
 function App() {
   return (
     <div className="App">

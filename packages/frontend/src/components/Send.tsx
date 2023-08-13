@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function Send() {
-  const [images, setImages] = useState(null);
+  const [images, setImages] = useState<FileList | null>(null);
   const [data, setData] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     const data = new FormData();
     console.log(images)
+    if (!images) return;
     for (let image of images) {
       data.append('images', image);
     }
