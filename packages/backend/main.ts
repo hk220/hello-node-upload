@@ -15,7 +15,7 @@ app.post('/upload', (req, res) => {
       console.log(f.name);
       filenames.push(f.name);
     });
-    res.send({"filename": filenames});
+    res.send(filenames);
   }
 }
 )
