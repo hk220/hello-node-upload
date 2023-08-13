@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "frontend": "cd packages/frontend && npm run start",
+    "backend": "cd packages/backend && node main.js"
+  },
+  "workspaces": [
+    "packages/frontend",
+    "packages/backend"
+  ]
+}
